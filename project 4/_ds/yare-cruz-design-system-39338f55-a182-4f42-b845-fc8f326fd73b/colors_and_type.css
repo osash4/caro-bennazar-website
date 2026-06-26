@@ -1,0 +1,205 @@
+/* ═══════════════════════════════════════════════════════════════════
+   YARE CRUZ · DESIGN TOKENS
+   Personal portfolio brand for Yare Cruz, Full Stack Developer.
+   Extracted directly from /yare-portfolio/src/app/globals.css.
+
+   Brand: Navy #2D3E6E + Gold #F5A623 on a near-black navy background.
+   Type:  Inter (variable, 300–900) + monospace accent
+═══════════════════════════════════════════════════════════════════ */
+
+/* ── Inter (Google Fonts CDN — Next.js loads via next/font in source) ── */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ─── COLOR · BRAND (from the </> logo) ─────────────────────────── */
+  --yc-navy:        #2D3E6E;   /* "Cruz" wordmark · bracket strokes  */
+  --yc-navy-mid:    #3D5488;   /* hover / lighter navy                */
+  --yc-navy-light:  #5A76B8;   /* subtle highlights / secondary text  */
+  --yc-gold:        #F5A623;   /* "Yare" wordmark · slash inside <>   */
+  --yc-gold-light:  #FFD485;   /* light tint of gold                  */
+  --yc-gold-dark:   #C97F0E;   /* pressed / dark gold                 */
+
+  /* ─── COLOR · SURFACES (dark-only system) ───────────────────────── */
+  --yc-bg:          #070D1A;   /* page background — deep navy-black   */
+  --yc-bg-card:     #0C1628;   /* card surface                        */
+  --yc-bg-elevated: #111E35;   /* elevated card / popovers            */
+  --yc-bg-deep:     #040810;   /* footer / deepest band               */
+
+  /* ─── COLOR · TEXT ──────────────────────────────────────────────── */
+  --yc-text:        #EEF2FF;   /* primary text                        */
+  --yc-text-muted:  #7A8FAF;   /* secondary / muted body              */
+
+  /* ─── COLOR · SEMANTIC ──────────────────────────────────────────── */
+  --yc-success:     #34d399;   /* "available" status pill             */
+  --yc-success-bg:  rgba(52,211,153,0.08);
+  --yc-success-bd:  rgba(52,211,153,0.25);
+
+  /* ─── COLOR · BORDERS / DIVIDERS (alpha tokens) ─────────────────── */
+  --yc-border:        rgba(45,62,110,0.30);   /* default card border  */
+  --yc-border-strong: rgba(90,118,184,0.40);  /* focused / outline    */
+  --yc-border-soft:   rgba(45,62,110,0.20);   /* hairlines, dividers  */
+  --yc-border-gold:   rgba(245,166,35,0.40);  /* gold accent border   */
+
+  /* ─── GRADIENTS · signature brand combos ────────────────────────── */
+  --yc-grad-brand:    linear-gradient(135deg, var(--yc-navy)        0%, var(--yc-gold) 100%);
+  --yc-grad-text:     linear-gradient(135deg, var(--yc-navy-light)  0%, var(--yc-gold) 100%);
+  --yc-grad-rule:     linear-gradient(90deg,  var(--yc-navy-light), var(--yc-gold));
+  --yc-grad-photo:    linear-gradient(to top, rgba(7,13,26,0.7) 0%, transparent 55%);
+  --yc-grad-banner:   linear-gradient(135deg, rgba(45,62,110,0.35) 0%, rgba(245,166,35,0.12) 100%);
+
+  /* ─── TYPE · FAMILIES ───────────────────────────────────────────── */
+  --yc-font-sans:  "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --yc-font-mono:  "JetBrains Mono", ui-monospace, "Fira Code", "SF Mono", monospace;
+
+  /* ─── TYPE · SIZES (raw tokens) ─────────────────────────────────── */
+  --yc-fs-eyebrow:  11px;      /* uppercase section labels             */
+  --yc-fs-caption:  12px;
+  --yc-fs-meta:     13px;
+  --yc-fs-body:     14px;      /* default UI/body                      */
+  --yc-fs-body-lg:  16px;      /* long-form paragraphs                 */
+  --yc-fs-lede:     17px;      /* hero bio                             */
+  --yc-fs-h3:       20px;
+  --yc-fs-h2:       clamp(2rem, 4.5vw, 3rem);     /* section headings  */
+  --yc-fs-h1:       clamp(2.8rem, 6vw, 4.5rem);   /* hero name         */
+  --yc-fs-display:  clamp(3rem, 7vw, 5.5rem);     /* showcase          */
+
+  /* ─── TYPE · WEIGHTS ────────────────────────────────────────────── */
+  --yc-fw-regular:  400;
+  --yc-fw-medium:   500;
+  --yc-fw-semibold: 600;
+  --yc-fw-bold:     700;
+  --yc-fw-extra:    800;
+  --yc-fw-black:    900;       /* hero headings + stat numbers         */
+
+  /* ─── TYPE · TRACKING ───────────────────────────────────────────── */
+  --yc-tracking-tight:   -0.03em;  /* hero name                        */
+  --yc-tracking-snug:    -0.025em; /* section headings                 */
+  --yc-tracking-normal:   0;
+  --yc-tracking-wide:     0.12em;  /* small caps labels                */
+  --yc-tracking-wider:    0.15em;  /* category labels                  */
+  --yc-tracking-widest:   0.28em;  /* eyebrow labels                   */
+
+  /* ─── LINE HEIGHT ───────────────────────────────────────────────── */
+  --yc-lh-tight:   1.08;       /* h1/h2                                */
+  --yc-lh-snug:    1.3;        /* h3 / card titles                     */
+  --yc-lh-normal:  1.6;        /* default body                         */
+  --yc-lh-relaxed: 1.75;       /* long-form paragraphs / hero bio      */
+  --yc-lh-loose:   1.85;       /* about copy                           */
+
+  /* ─── SPACING ───────────────────────────────────────────────────── */
+  --yc-space-1:   4px;
+  --yc-space-2:   8px;
+  --yc-space-3:   12px;
+  --yc-space-4:   16px;
+  --yc-space-5:   20px;
+  --yc-space-6:   24px;
+  --yc-space-8:   32px;
+  --yc-space-10:  40px;
+  --yc-space-12:  48px;
+  --yc-space-14:  56px;
+  --yc-space-16:  64px;
+  --yc-space-section: 110px;   /* vertical rhythm between sections     */
+  --yc-px:        32px;        /* page horizontal padding              */
+  --yc-max-w:     1140px;      /* container max-width                  */
+
+  /* ─── RADIUS ────────────────────────────────────────────────────── */
+  --yc-r-xs:    6px;          /* tags                                 */
+  --yc-r-sm:    9px;          /* small buttons                        */
+  --yc-r-md:    10px;         /* default button / input               */
+  --yc-r-lg:    12px;         /* extras row                           */
+  --yc-r-xl:    14px;         /* floating stat                        */
+  --yc-r-2xl:   16px;         /* default card                         */
+  --yc-r-3xl:   20px;         /* hero photo / large card              */
+  --yc-r-pill:  99px;         /* badges / status                      */
+
+  /* ─── SHADOWS ───────────────────────────────────────────────────── */
+  --yc-shadow-glow-gold:     0 4px 20px rgba(245,166,35,0.25);
+  --yc-shadow-glow-gold-hi:  0 8px 30px rgba(245,166,35,0.35);
+  --yc-shadow-gold-press:    0 8px 32px rgba(245,166,35,0.45);
+  --yc-shadow-card-hover:    0 20px 50px rgba(0,0,0,0.25);
+  --yc-shadow-card-deep:     0 24px 60px rgba(0,0,0,0.25);
+  --yc-glow-orb-navy:        radial-gradient(circle, rgba(45,62,110,0.12), transparent 70%);
+  --yc-glow-orb-gold:        radial-gradient(circle, rgba(245,166,35,0.06), transparent 70%);
+
+  /* ─── MOTION ────────────────────────────────────────────────────── */
+  --yc-ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --yc-dur-fast:      0.18s;
+  --yc-dur-base:      0.3s;
+  --yc-dur-slow:      0.6s;
+  --yc-dur-hero:      0.7s;
+}
+
+/* ════════════════════════════════════════════════════════════════════
+   SEMANTIC TYPE ROLES — apply directly to elements
+═══════════════════════════════════════════════════════════════════ */
+
+.yc-h1 {                                          /* Hero name         */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-h1);
+  font-weight: var(--yc-fw-black);
+  line-height: 1.05;
+  letter-spacing: var(--yc-tracking-tight);
+  color: var(--yc-text);
+}
+
+.yc-h2 {                                          /* Section heading   */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-h2);
+  font-weight: var(--yc-fw-black);
+  line-height: var(--yc-lh-tight);
+  letter-spacing: var(--yc-tracking-snug);
+  color: var(--yc-text);
+}
+
+.yc-h3 {                                          /* Card titles       */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-h3);
+  font-weight: var(--yc-fw-bold);
+  line-height: var(--yc-lh-snug);
+  color: var(--yc-text);
+}
+
+.yc-eyebrow {                                     /* "01. About me"    */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-eyebrow);
+  font-weight: var(--yc-fw-bold);
+  letter-spacing: var(--yc-tracking-widest);
+  text-transform: uppercase;
+  color: var(--yc-gold);
+}
+
+.yc-label {                                       /* category labels   */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-eyebrow);
+  font-weight: var(--yc-fw-bold);
+  letter-spacing: var(--yc-tracking-wider);
+  text-transform: uppercase;
+  color: var(--yc-text-muted);
+}
+
+.yc-body {
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-body-lg);
+  line-height: var(--yc-lh-relaxed);
+  color: var(--yc-text-muted);
+}
+
+.yc-meta {                                        /* dates, read time  */
+  font-family: var(--yc-font-sans);
+  font-size: var(--yc-fs-meta);
+  color: var(--yc-text-muted);
+}
+
+.yc-mono {                                        /* URLs · code feel  */
+  font-family: var(--yc-font-mono);
+  font-size: var(--yc-fs-meta);
+  color: var(--yc-text-muted);
+  letter-spacing: 0;
+}
+
+.yc-gradient-text {                               /* signature flourish*/
+  background: var(--yc-grad-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

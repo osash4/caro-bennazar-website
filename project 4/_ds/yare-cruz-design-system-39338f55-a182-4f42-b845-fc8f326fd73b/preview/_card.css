@@ -1,0 +1,52 @@
+/* Shared card chrome for design system preview cards */
+@import url("../colors_and_type.css");
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--yc-bg);
+  color: var(--yc-text);
+  font-family: var(--yc-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  width: 700px;
+  box-sizing: border-box;
+  padding: 24px;
+  background: var(--yc-bg);
+  display: flex;
+  align-items: center;
+}
+
+.card.tall {
+  align-items: stretch;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.swatch {
+  flex: 1;
+  min-height: 96px;
+  border-radius: var(--yc-r-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--yc-font-mono);
+  font-size: 11px;
+  border: 1px solid var(--yc-border-soft);
+}
+
+.swatch .nm { font-weight: 600; letter-spacing: 0.04em; }
+.swatch .hx { opacity: 0.75; }
+
+/* When swatch background is light, force dark text */
+.swatch.on-light { color: #0a1024; }
+.swatch.on-dark  { color: #EEF2FF; }
